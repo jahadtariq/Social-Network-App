@@ -129,7 +129,7 @@ async function reply(req, res) {
         .populate([
             {
                 path: 'comments',
-                select: 'author content replies upvotes downvotes createdAt post forum',
+                select: 'author content replies upvotes downvotes createdAt post forum media',
                 populate: [
                     {
                         path: 'author',
@@ -137,7 +137,7 @@ async function reply(req, res) {
                     },
                     {
                         path: 'replies',
-                        select: 'author content replies upvotes downvotes createdAt',
+                        select: 'author content replies upvotes downvotes post forum createdAt media',
                         populate: [
                             {
                                 path: 'author',
@@ -145,7 +145,7 @@ async function reply(req, res) {
                             },
                             {
                                 path: 'replies',
-                                select: 'author content replies upvotes downvotes createdAt',
+                                select: 'author content replies upvotes downvotes post forum createdAt media',
                                 populate: {
                                     path: 'author',
                                     select: 'username profilePicture' // Include profilePicture here
