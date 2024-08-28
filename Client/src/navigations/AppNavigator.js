@@ -10,6 +10,8 @@ import OnBoarding from '../screens/onBoardingScreens/onBoarding';
 import OnBoardingProfile from '../screens/onBoardingScreens/onBoardingProfile';
 import LoginScreen from '../screens/AuthScreens/loginScreen';
 import SpecificChat from '../screens/messageFlows/SpecificChat';
+import CommentScreen from '../screens/mainScreens/CommentScreen';
+import ReplyScreen from '../screens/mainScreens/ReplyScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +19,7 @@ const AppNavigator = () => {
   return (
     <UserProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Specific Chat"
+        <Stack.Navigator initialRouteName="Login"
         screenOptions={{
           headerShown:false
         }}
@@ -41,6 +43,16 @@ const AppNavigator = () => {
           <Stack.Screen
             name='Login'
             component={LoginScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='Comment'
+            component={CommentScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='Reply'
+            component={ReplyScreen}
             options={{ headerShown: false }}
           />
 

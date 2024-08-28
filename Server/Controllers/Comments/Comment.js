@@ -129,7 +129,7 @@ async function reply(req, res) {
         .populate([
             {
                 path: 'comments',
-                select: 'author content replies upvotes downvotes createdAt',
+                select: 'author content replies upvotes downvotes createdAt post forum',
                 populate: [
                     {
                         path: 'author',
